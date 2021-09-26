@@ -12,6 +12,7 @@ image_height = 256
 cat(paste0("P3\n", image_width, " ", image_height, "\n255\n"))
 
 for (j in (image_height-1):0) {
+  write(paste("\rScanlines remaining:", j), stderr())
   for (i in 0:(image_width-1)) {
 
     r = as.double(i) / as.double(image_width-1)
@@ -24,6 +25,8 @@ for (j in (image_height-1):0) {
     
     cat(paste(ir, ig, ib, "\n"))
   }}
+
+write("\nDone.\n", stderr())
 
 # then run this from terminal:
 # Rscript ch2.R > image.ppm
