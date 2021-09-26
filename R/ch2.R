@@ -18,9 +18,9 @@ for (j in (image_height-1):0) {
     g = as.double(j) / as.double(image_height-1)
     b = 0.25
 
-    ir = floor(255.999 * r)
-    ig = floor(255.999 * g)
-    ib = floor(255.999 * b)
+    ir = as.integer(255.999 * r)
+    ig = as.integer(255.999 * g)
+    ib = as.integer(255.999 * b)
     
     cat(paste(ir, ig, ib, "\n"))
   }}
